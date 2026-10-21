@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Remmy — Intelligent Daily Reminders, Habits & Focus OS</title>
+  <meta name="description" content="Remmy is the next-gen smart reminder and habit tracking app engineered with natural language parsing, geo-contextual alarms, and focus pomodoro cycles.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Top Ribbon -->
+  <aside class="remmy-ribbon">
+    <div class="container ribbon-inner">
+      <span class="ribbon-pill">✨ REMMY 3.0</span>
+      <span>Now with On-Device AI Natural Language Parsing & Siri/Apple Watch Sync</span>
+      <a href="#playground" class="ribbon-link">Try Live Playground →</a>
+    </div>
+  </aside>
+
+  <!-- Sticky Navbar -->
+  <header class="remmy-header" id="header">
+    <div class="container header-container">
+      <a href="#" class="brand-wrap">
+        <div class="brand-icon">🔔</div>
+        <span class="brand-title">Rem<strong>my</strong></span>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#playground" class="nav-link">Live App</a>
+        <a href="#focus" class="nav-link">Focus Timer</a>
+        <a href="#features" class="nav-link">Bento Features</a>
+        <a href="#pricing" class="nav-link">Pricing</a>
+      </nav>
+
+      <div class="header-action-group">
+        <a href="#playground" class="btn btn-primary btn-sm">Launch Web App</a>
+        <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+      <div class="aurora-glow glow-violet"></div>
+      <div class="aurora-glow glow-indigo"></div>
+
+      <div class="container hero-grid">
+        <div class="hero-text-block">
+          <div class="hero-badge">
+            <span class="pulse-ring"></span>
+            <span>Zero Stress • Maximum Mental Clarity</span>
+          </div>
+          <h1 class="hero-heading">
+            Never Forget What <br>
+            <span class="violet-gradient">Truly Matters.</span>
+          </h1>
+          <p class="hero-subtext">
+            Type exactly how you think: <em>"Remind me to call Mom tomorrow at 6pm when I leave the office"</em>. Remmy parses date, time, location, and priority in real-time without cumbersome date pickers.
+          </p>
+
+          <div class="hero-cta-row">
+            <a href="#playground" class="btn btn-primary btn-lg">Open Interactive Sandbox</a>
+            <a href="#focus" class="btn btn-glass btn-lg">Try Focus Mode</a>
+          </div>
+
+          <div class="hero-social-proof">
+            <span class="stars-row">★★★★★</span>
+            <span>Loved by 85,000+ daily productivity optimizers</span>
+          </div>
+        </div>
+
+        <div class="hero-card-column">
+          <!-- Floating Mockup Reminder Cards -->
+          <div class="floating-reminders-wrapper">
+            <div class="reminder-card card-glow-1">
+              <div class="rem-header">
+                <span class="rem-cat cat-health">HEALTH & WELLNESS</span>
+                <span class="rem-time">07:30 AM</span>
+              </div>
+              <h4>Morning Sunlight Walk & 500ml Water</h4>
+              <span class="rem-tag">💧 14-day streak • Daily Habit</span>
+            </div>
+
+            <div class="reminder-card card-glow-2">
+              <div class="rem-header">
+                <span class="rem-cat cat-work">WORK SPRINT</span>
+                <span class="rem-time">10:15 AM</span>
+              </div>
+              <h4>Ship Q4 Architecture Strategy Deck</h4>
+              <span class="rem-tag">⚡ High Priority • In 45 mins</span>
+            </div>
+
+            <div class="reminder-card card-glow-3">
+              <div class="rem-header">
+                <span class="rem-cat cat-geo">LOCATION TRIGGER</span>
+                <span class="rem-time">When leaving gym</span>
+              </div>
+              <h4>Pick up organic protein cold brew</h4>
+              <span class="rem-tag">📍 Geo-fence active</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Remmy Web Playground -->
+    <section class="playground-section" id="playground">
+      <div class="container">
+        <div class="section-title-wrap text-center">
+          <span class="eyebrow">INTERACTIVE EXPERIENCE</span>
+          <h2>The Live Remmy Web Playground</h2>
+          <p>Add genuine tasks below, toggle habits, and watch your daily streak flame grow.</p>
+        </div>
+
+        <div class="playground-card glass-panel">
+          <!-- App Header -->
+          <div class="app-top-row">
+            <div class="date-badge">
+              <strong id="liveDayText">Today, Wednesday</strong>
+              <small id="liveDateText">October 21, 2026</small>
+            </div>
+            <div class="streak-badge">
+              <span class="streak-flame">🔥</span>
+              <strong id="streakCount">14</strong>
+              <small>Day Streak</small>
+            </div>
+          </div>
+
+          <!-- Add Task Input -->
+          <form class="task-add-bar" id="addTaskForm">
+            <input type="text" placeholder="Add a reminder... (e.g. Call Alex at 5pm)" required id="taskInput">
+            <select id="taskCategorySelect">
+              <option value="Focus">🎯 Focus</option>
+              <option value="Habit">🌱 Habit</option>
+              <option value="Personal">☕ Personal</option>
+            </select>
+            <button type="submit" class="btn btn-primary btn-sm">Add +</button>
+          </form>
+
+          <!-- Filter Tabs -->
+          <div class="task-tabs">
+            <button class="task-tab active" data-tab="all">All Reminders (<span id="totalTaskCount">4</span>)</button>
+            <button class="task-tab" data-tab="habits">Daily Habits</button>
+            <button class="task-tab" data-tab="completed">Completed</button>
+          </div>
+
+          <!-- Tasks List -->
+          <div class="tasks-container" id="tasksList">
+            <div class="task-row" data-type="habits">
+              <input type="checkbox" class="task-check" onchange="toggleTaskComplete(this)">
+              <div class="task-info">
+                <span class="task-title">Drink 500ml Water & Electrolytes</span>
+                <small class="task-meta">🌱 Daily Habit • 08:00 AM</small>
+              </div>
+              <button class="task-delete" onclick="deleteTask(this)">&times;</button>
+            </div>
+
+            <div class="task-row" data-type="focus">
+              <input type="checkbox" class="task-check" onchange="toggleTaskComplete(this)">
+              <div class="task-info">
+                <span class="task-title">Deep Work: Review AI Pipeline Deployment</span>
+                <small class="task-meta">🎯 Focus Sprint • 11:30 AM</small>
+              </div>
+              <button class="task-delete" onclick="deleteTask(this)">&times;</button>
+            </div>
+
+            <div class="task-row" data-type="habits">
+              <input type="checkbox" class="task-check" onchange="toggleTaskComplete(this)">
+              <div class="task-info">
+                <span class="task-title">15-Minute Sunlight Walk & Mobility Stretch</span>
+                <small class="task-meta">🌱 Daily Habit • 01:00 PM</small>
+              </div>
+              <button class="task-delete" onclick="deleteTask(this)">&times;</button>
+            </div>
+
+            <div class="task-row" data-type="personal">
+              <input type="checkbox" class="task-check" onchange="toggleTaskComplete(this)">
+              <div class="task-info">
+                <span class="task-title">Buy Ethiopian Yirgacheffe Coffee Beans</span>
+                <small class="task-meta">☕ Personal • 05:45 PM</small>
+              </div>
+              <button class="task-delete" onclick="deleteTask(this)">&times;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Smart Focus Pomodoro Widget -->
+    <section class="focus-section" id="focus">
+      <div class="container">
+        <div class="focus-box glass-panel">
+          <span class="eyebrow">INTEGRATED FOCUS CYCLES</span>
+          <h2>Hyper-Focus Pomodoro Timer</h2>
+          <p>Pair your reminders with distraction-free 25-minute deep focus sprints.</p>
+
+          <div class="timer-dial-wrapper">
+            <div class="timer-clock" id="pomodoroClock">25:00</div>
+            <div class="timer-controls">
+              <button class="btn btn-primary" id="startTimerBtn">Start Focus</button>
+              <button class="btn btn-glass" id="resetTimerBtn">Reset</button>
+            </div>
+            <span class="timer-mode-tag" id="timerStatusTag">Ready for 25-minute deep sprint</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bento Features Grid -->
+    <section class="features-section" id="features">
+      <div class="container">
+        <div class="section-title-wrap text-center">
+          <span class="eyebrow">WHY REMMY</span>
+          <h2>Crafted for High-Cognitive Performers</h2>
+        </div>
+
+        <div class="bento-grid">
+          <div class="bento-card bento-wide glass-panel">
+            <span class="bento-icon">🧠</span>
+            <h3>Natural Language Semantic Parser</h3>
+            <p>Speak or type freely. Remmy effortlessly understands relative dates ("next Tuesday after lunch"), recurring intervals ("every 3rd Friday"), and context priorities with zero manual clicking.</p>
+          </div>
+
+          <div class="bento-card glass-panel">
+            <span class="bento-icon">📍</span>
+            <h3>Geographic Proximity Alerts</h3>
+            <p>Trigger alerts upon entering or departing locations: grocery stores, office campuses, or train stations.</p>
+          </div>
+
+          <div class="bento-card glass-panel">
+            <span class="bento-icon">⌚</span>
+            <h3>Instant Cross-Platform Sync</h3>
+            <p>Seamlessly synchronizes with Apple Watch Complications, macOS Menu Bar, and Android Lockscreen widgets.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section" id="pricing">
+      <div class="container">
+        <div class="section-title-wrap text-center">
+          <span class="eyebrow">SIMPLE PLANS</span>
+          <h2>Transparent, Honest Pricing</h2>
+        </div>
+
+        <div class="pricing-grid">
+          <div class="pricing-card glass-panel">
+            <h3>Starter Free</h3>
+            <p>Essential smart reminders for everyday clarity.</p>
+            <div class="price-val"><strong>$0</strong><span>/ forever</span></div>
+            <ul class="features-list">
+              <li>✓ Up to 50 active reminders</li>
+              <li>✓ Basic natural language parsing</li>
+              <li>✓ 3 habit streaks</li>
+            </ul>
+            <button class="btn btn-glass btn-block">Current Plan</button>
+          </div>
+
+          <div class="pricing-card glass-panel featured-pricing">
+            <div class="popular-ribbon">REMMY PRO</div>
+            <h3>Pro Mind</h3>
+            <p>Unlimited reminders, geo-fencing, and focus telemetry.</p>
+            <div class="price-val"><strong>$4.99</strong><span>/ month</span></div>
+            <ul class="features-list">
+              <li>✓ Unlimited reminders & recurring rituals</li>
+              <li>✓ Geo-proximity contextual alarms</li>
+              <li>✓ Unlimited habit streak tracking</li>
+              <li>✓ Pomodoro focus analytics & export</li>
+              <li>✓ Apple Watch & lockscreen widgets</li>
+            </ul>
+            <button class="btn btn-primary btn-block" onclick="alert('Welcome to Remmy Pro!')">Start 14-Day Free Trial</button>
+          </div>
+
+          <div class="pricing-card glass-panel">
+            <h3>Lifetime Zen</h3>
+            <p>Pay once, enjoy mental serenity forever.</p>
+            <div class="price-val"><strong>$99</strong><span>/ one-time</span></div>
+            <ul class="features-list">
+              <li>✓ All Remmy Pro features forever</li>
+              <li>✓ All future 2026-2030 updates</li>
+              <li>✓ Priority beta feature access</li>
+            </ul>
+            <button class="btn btn-glass btn-block" onclick="alert('Lifetime access selected!')">Get Lifetime</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="remmy-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <div class="brand-wrap">
+          <div class="brand-icon">🔔</div>
+          <span class="brand-title">Rem<strong>my</strong></span>
+        </div>
+        <p>Intelligent productivity software designed to reduce anxiety and amplify deep work output.</p>
+        <p class="copyright">&copy; 2026 Remmy Software Inc. Engineered with clarity for <strong>Toxa</strong>.</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>PRODUCT</h4>
+        <a href="#playground">Web App</a>
+        <a href="#focus">Focus Mode</a>
+        <a href="#features">Geo Reminders</a>
+        <a href="#pricing">Pricing</a>
+      </div>
+
+      <div class="footer-links">
+        <h4>INTEGRATIONS</h4>
+        <span>Apple Watch Complication</span>
+        <span>Google Calendar Sync</span>
+        <span>Notion Database Export</span>
+      </div>
+
+      <div class="footer-links">
+        <h4>COMMUNITY</h4>
+        <span>Discord Productivity Guild</span>
+        <span>support@remmy-app.io</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
